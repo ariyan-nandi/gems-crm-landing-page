@@ -7,6 +7,7 @@ const WebformEmbed = () => {
 
 
   const formSnippet = `
+
 <style>
     .crm-webform-wrapper { all: initial; font-family: Arial, sans-serif; }
     .crm-webform-container { max-width: 650px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid #eef0f2; }
@@ -29,49 +30,49 @@ const WebformEmbed = () => {
 </style>
 
 <div class="crm-webform-wrapper">
-    <div class="crm-webform-container" id="crm-container-cmoaaz5c30000s81daqey053e">
+    <div class="crm-webform-container" id="crm-container-cmoagjk350000oj1d3sq1ua78">
         <div class="crm-form-header">Signup</div>
-        <form id="crm-webform-cmoaaz5c30000s81daqey053e" enctype="multipart/form-data">
-            <input type="hidden" name="webformId" value="cmoaaz5c30000s81daqey053e" />
+        <form id="crm-webform-cmoagjk350000oj1d3sq1ua78" enctype="multipart/form-data">
+            <input type="hidden" name="webformId" value="cmoagjk350000oj1d3sq1ua78" />
             <input type="hidden" name="module" value="Leads" />
             <div class="crm-form-row">
             <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_firstName_cmoaaz5c30000s81daqey053e" class="crm-form-label">First Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_firstName_cmoaaz5c30000s81daqey053e" type="text" name="firstName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+                <label for="crm_firstName_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">First Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
+                <input id="crm_firstName_cmoagjk350000oj1d3sq1ua78" type="text" name="firstName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
                 
             </div>
             <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_lastName_cmoaaz5c30000s81daqey053e" class="crm-form-label">Last Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_lastName_cmoaaz5c30000s81daqey053e" type="text" name="lastName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+                <label for="crm_lastName_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Last Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
+                <input id="crm_lastName_cmoagjk350000oj1d3sq1ua78" type="text" name="lastName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
                 
             </div>
             <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_company_cmoaaz5c30000s81daqey053e" class="crm-form-label">Company </label>
-                <input id="crm_company_cmoaaz5c30000s81daqey053e" type="text" name="company"  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+                <label for="crm_company_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Company </label>
+                <input id="crm_company_cmoagjk350000oj1d3sq1ua78" type="text" name="company"  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
                 
             </div>
             <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_email_cmoaaz5c30000s81daqey053e" class="crm-form-label">Email <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_email_cmoaaz5c30000s81daqey053e" type="text" name="email" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+                <label for="crm_email_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Email <span style="color:#dc3545; margin-left:3px;">*</span></label>
+                <input id="crm_email_cmoagjk350000oj1d3sq1ua78" type="text" name="email" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
                 
             </div>
             <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_phone_cmoaaz5c30000s81daqey053e" class="crm-form-label">Phone <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_phone_cmoaaz5c30000s81daqey053e" type="text" name="phone" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+                <label for="crm_phone_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Phone <span style="color:#dc3545; margin-left:3px;">*</span></label>
+                <input id="crm_phone_cmoagjk350000oj1d3sq1ua78" type="text" name="phone" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
                 
             </div></div>
             <div class="crm-form-footer"><button type="submit" class="crm-form-submit">Submit</button></div>
         </form>
-        <div id="crm-form-message-cmoaaz5c30000s81daqey053e" class="crm-message-box"></div>
+        <div id="crm-form-message-cmoagjk350000oj1d3sq1ua78" class="crm-message-box"></div>
     </div>
 </div>
 
 <script>
-document.getElementById('crm-webform-cmoaaz5c30000s81daqey053e').addEventListener('submit', function(e) {
+document.getElementById('crm-webform-cmoagjk350000oj1d3sq1ua78').addEventListener('submit', function(e) {
     e.preventDefault();
     var form = e.target;
     var btn = form.querySelector('button[type="submit"]');
-    var msgDiv = document.getElementById('crm-form-message-cmoaaz5c30000s81daqey053e');
+    var msgDiv = document.getElementById('crm-form-message-cmoagjk350000oj1d3sq1ua78');
     
     // File upload validation
     var fileInputs = form.querySelectorAll('input[type="file"]');
@@ -126,7 +127,7 @@ document.getElementById('crm-webform-cmoaaz5c30000s81daqey053e').addEventListene
     fetch('/cm/api/webform-submissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({webformId: 'cmoaaz5c30000s81daqey053e', fields: data})
+        body: JSON.stringify({webformId: 'cmoagjk350000oj1d3sq1ua78', fields: data})
     }).then(response => response.json()).then(result => {
         if(result.success || result.message === "Form submitted successfully") { form.style.display = 'none'; msgDiv.style.display = 'block'; msgDiv.innerText = 'Thank you! Your submission has been received.'; } else { throw new Error(result.message || 'Submission failed'); }
     }).catch(error => {
@@ -172,7 +173,7 @@ document.getElementById('crm-webform-cmoaaz5c30000s81daqey053e').addEventListene
       // Replace relative URL with full CRM base URL (ensuring no double slashes)
       let crmBaseUrl = process.env.NEXT_PUBLIC_CRM_BASE_URL || 'https://your-crm-domain.com';
       if (crmBaseUrl.endsWith('/')) crmBaseUrl = crmBaseUrl.slice(0, -1);
-      
+
       scriptContent = scriptContent.replace(
         "'/cm/api/webform-submissions'",
         `'${crmBaseUrl}/cm/api/webform-submissions'`
