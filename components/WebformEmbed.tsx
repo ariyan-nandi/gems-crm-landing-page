@@ -9,131 +9,170 @@ const WebformEmbed = () => {
   const formSnippet = `
 
 <style>
-    .crm-webform-wrapper { all: initial; font-family: Arial, sans-serif; }
-    .crm-webform-container { max-width: 650px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid #eef0f2; }
-    .crm-webform-container * { box-sizing: border-box; font-family: inherit; }
-    .crm-form-header { font-size: 24px; font-weight: 700; color: #1a2e5a; margin-bottom: 25px; text-align: center; background: transparent; padding: 10px; border-radius: 6px;}
-    .crm-form-row { display: flex; flex-wrap: wrap; gap: 15px; }
-    .crm-form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
-    .crm-form-label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #333333; }
-    .crm-form-help-text { font-size: 11px; color: #6b7280; margin-top: 5px; }
-    .crm-form-input { padding: 12px; background: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; line-height: 1.5; color: #333333; transition: border-color 0.2s; }
-    .crm-form-input:focus { outline: none; border-color: #365486 !important; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
-    
-    .crm-form-footer { display: flex; justify-content: center; width: 100%; margin-top: 20px; }
-    .crm-form-submit { background: #365486; color: #ffffff; padding: 14px 30px; height: auto; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; font-size: 16px; transition: opacity 0.2s; }
-    .crm-form-submit:hover { opacity: 0.85; }
-    .crm-form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
-    
-    .crm-message-box { display: none; margin-top: 20px; padding: 15px; border-radius: 6px; background: #ecfdf5; color: #234e52; text-align: center; font-weight: 500; font-size: 15px;}
-    @media (max-width: 600px) { .crm-form-group { flex: 1 1 100% !important; max-width: 100% !important; min-width: 100% !important; } .crm-webform-container { padding: 25px 20px; } }
+ .crm-webform-wrapper { all: initial; font-family: Arial, sans-serif; }
+ .crm-webform-container { max-width: 650px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid #eef0f2; }
+ .crm-webform-container * { box-sizing: border-box; font-family: inherit; }
+ .crm-form-header { font-size: 24px; font-weight: 700; color: #1a2e5a; margin-bottom: 25px; text-align: center; background: transparent; padding: 10px; border-radius: 6px;}
+ .crm-form-row { display: flex; flex-wrap: wrap; gap: 15px; }
+ .crm-form-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+ .crm-form-label { display: block; margin-bottom: 8px; font-size: 14px; font-weight: 600; color: #333333; }
+ .crm-form-help-text { font-size: 11px; color: #6b7280; margin-top: 5px; }
+ .crm-form-input { padding: 12px; background: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; line-height: 1.5; color: #333333; transition: border-color 0.2s; }
+ .crm-form-input:focus { outline: none; border-color: #365486 !important; box-shadow: 0 0 0 3px rgba(0,0,0,0.05); }
+
+ .crm-form-footer { display: flex; justify-content: center; width: 100%; margin-top: 20px; }
+ .crm-form-submit { background: #365486; color: #ffffff; padding: 14px 30px; height: auto; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; width: 100%; font-size: 16px; transition: opacity 0.2s; }
+ .crm-form-submit:hover { opacity: 0.85; }
+ .crm-form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+ .crm-message-box { display: none; margin-top: 20px; padding: 15px; border-radius: 6px; background: #ecfdf5; color: #234e52; text-align: center; font-weight: 500; font-size: 15px;}
+ @media (max-width: 600px) { .crm-form-group { flex: 1 1 100% !important; max-width: 100% !important; min-width: 100% !important; } .crm-webform-container { padding: 25px 20px; } }
 </style>
 
+
+
 <div class="crm-webform-wrapper">
-    <div class="crm-webform-container" id="crm-container-cmoagjk350000oj1d3sq1ua78">
-        <div class="crm-form-header">Signup</div>
-        <form id="crm-webform-cmoagjk350000oj1d3sq1ua78" enctype="multipart/form-data">
-            <input type="hidden" name="webformId" value="cmoagjk350000oj1d3sq1ua78" />
-            <input type="hidden" name="module" value="Leads" />
-            <div class="crm-form-row">
-            <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_firstName_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">First Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_firstName_cmoagjk350000oj1d3sq1ua78" type="text" name="firstName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
-                
-            </div>
-            <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_lastName_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Last Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_lastName_cmoagjk350000oj1d3sq1ua78" type="text" name="lastName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
-                
-            </div>
-            <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_company_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Company </label>
-                <input id="crm_company_cmoagjk350000oj1d3sq1ua78" type="text" name="company"  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
-                
-            </div>
-            <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_email_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Email <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_email_cmoagjk350000oj1d3sq1ua78" type="text" name="email" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
-                
-            </div>
-            <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 200px;">
-                <label for="crm_phone_cmoagjk350000oj1d3sq1ua78" class="crm-form-label">Phone <span style="color:#dc3545; margin-left:3px;">*</span></label>
-                <input id="crm_phone_cmoagjk350000oj1d3sq1ua78" type="text" name="phone" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
-                
-            </div></div>
-            <div class="crm-form-footer"><button type="submit" class="crm-form-submit">Submit</button></div>
-        </form>
-        <div id="crm-form-message-cmoagjk350000oj1d3sq1ua78" class="crm-message-box"></div>
-    </div>
+<div class="crm-webform-container" id="crm-container-cmob43b6q0000lr1c8mg7olcg">
+<div class="crm-form-header">Test form 002</div>
+<form id="crm-webform-cmob43b6q0000lr1c8mg7olcg" enctype="multipart/form-data">
+<input type="hidden" name="webformId" value="cmob43b6q0000lr1c8mg7olcg" />
+<input type="hidden" name="module" value="Leads" />
+<div class="crm-form-row">
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_firstName_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">First Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_firstName_cmob43b6q0000lr1c8mg7olcg" type="text" name="firstName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_lastName_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Last Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_lastName_cmob43b6q0000lr1c8mg7olcg" type="text" name="lastName" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_title_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Title </label>
+<input id="crm_title_cmob43b6q0000lr1c8mg7olcg" type="text" name="title" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_email_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Email <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_email_cmob43b6q0000lr1c8mg7olcg" type="text" name="email" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_phone_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Phone <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_phone_cmob43b6q0000lr1c8mg7olcg" type="text" name="phone" required class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_company_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Company </label>
+<input id="crm_company_cmob43b6q0000lr1c8mg7olcg" type="text" name="company" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_industry_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Industry </label>
+<input id="crm_industry_cmob43b6q0000lr1c8mg7olcg" type="text" name="industry" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_country_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Country </label>
+<input id="crm_country_cmob43b6q0000lr1c8mg7olcg" type="text" name="country" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_state_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">State </label>
+<input id="crm_state_cmob43b6q0000lr1c8mg7olcg" type="text" name="state" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_city_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">City </label>
+<input id="crm_city_cmob43b6q0000lr1c8mg7olcg" type="text" name="city" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_addressLine1_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Address Line 1 </label>
+<textarea id="crm_addressLine1_cmob43b6q0000lr1c8mg7olcg" name="addressLine1" rows="3" class="crm-form-input" placeholder="" style="width: 100%; height: auto; "></textarea>
+
+</div>
+<div class="crm-form-group" style="flex: 1 1 50%; max-width: 50%; min-width: 200px;">
+<label for="crm_zipCode_cmob43b6q0000lr1c8mg7olcg" class="crm-form-label">Zip Code </label>
+<input id="crm_zipCode_cmob43b6q0000lr1c8mg7olcg" type="number" name="zipCode" class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+
+</div></div>
+<div class="crm-form-footer"><button type="submit" class="crm-form-submit">Submit</button></div>
+</form>
+<div id="crm-form-message-cmob43b6q0000lr1c8mg7olcg" class="crm-message-box"></div>
+</div>
 </div>
 
+
+
 <script>
-document.getElementById('crm-webform-cmoagjk350000oj1d3sq1ua78').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var form = e.target;
-    var btn = form.querySelector('button[type="submit"]');
-    var msgDiv = document.getElementById('crm-form-message-cmoagjk350000oj1d3sq1ua78');
-    
-    // File upload validation
-    var fileInputs = form.querySelectorAll('input[type="file"]');
-    for (var i = 0; i < fileInputs.length; i++) {
-        var fileInput = fileInputs[i];
-        var file = fileInput.files[0];
-        if (file) {
-            // Check file size
-            var maxSizeMB = fileInput.getAttribute('data-max-size');
-            if (maxSizeMB) {
-                var maxSizeBytes = parseInt(maxSizeMB) * 1024 * 1024;
-                if (file.size > maxSizeBytes) {
-                    msgDiv.style.display = 'block';
-                    msgDiv.style.backgroundColor = '#fef2f2';
-                    msgDiv.style.color = '#991b1b';
-                    msgDiv.innerText = 'Error: File "' + file.name + '" exceeds the maximum size of ' + maxSizeMB + 'MB.';
-                    return;
-                }
-            }
-            // Check file type
-            var allowedTypes = fileInput.getAttribute('data-file-types');
-            if (allowedTypes) {
-                var typesArray = allowedTypes.split(',');
-                var fileExt = file.name.split('.').pop().toLowerCase();
-                var fileType = file.type.split('/')[0];
-                var isAllowed = false;
-                
-                for (var j = 0; j < typesArray.length; j++) {
-                    var type = typesArray[j].trim();
-                    if (type === 'Images' && (['jpg','jpeg','png','gif','webp'].includes(fileExt) || fileType === 'image')) { isAllowed = true; break; }
-                    if (type === 'Documents' && (['doc','docx','txt','rtf'].includes(fileExt) || fileType === 'application')) { isAllowed = true; break; }
-                    if (type === 'PDF' && (fileExt === 'pdf' || file.type === 'application/pdf')) { isAllowed = true; break; }
-                    if (type === 'Spreadsheets' && (['xls','xlsx','csv'].includes(fileExt) || file.type.includes('spreadsheet'))) { isAllowed = true; break; }
-                }
-                
-                if (!isAllowed) {
-                    msgDiv.style.display = 'block';
-                    msgDiv.style.backgroundColor = '#fef2f2';
-                    msgDiv.style.color = '#991b1b';
-                    msgDiv.innerText = 'Error: File type "' + fileExt + '" is not allowed for "' + fileInput.name + '". Allowed types: ' + allowedTypes + '.';
-                    return;
-                }
-            }
-        }
-    }
-    
-    var formData = new FormData(form);
-    var data = {};
-    formData.forEach((value, key) => { if(key !== 'webformId' && key !== 'module') { data[key] = value; } });
-    btn.disabled = true;
-    btn.innerText = 'Submitting...';
-    fetch('/cm/api/webform-submissions', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({webformId: 'cmoagjk350000oj1d3sq1ua78', fields: data})
-    }).then(response => response.json()).then(result => {
-        if(result.success || result.message === "Form submitted successfully") { form.style.display = 'none'; msgDiv.style.display = 'block'; msgDiv.innerText = 'Thank you! Your submission has been received.'; } else { throw new Error(result.message || 'Submission failed'); }
-    }).catch(error => {
-        msgDiv.style.display = 'block'; msgDiv.style.backgroundColor = '#fef2f2'; msgDiv.style.color = '#991b1b'; msgDiv.innerText = 'Error: ' + error.message;
-        btn.disabled = false; btn.innerText = 'Submit';
-    });
+document.getElementById('crm-webform-cmob43b6q0000lr1c8mg7olcg').addEventListener('submit', function(e) {
+ e.preventDefault();
+ var form = e.target;
+ var btn = form.querySelector('button[type="submit"]');
+ var msgDiv = document.getElementById('crm-form-message-cmob43b6q0000lr1c8mg7olcg');
+
+ // File upload validation
+ var fileInputs = form.querySelectorAll('input[type="file"]');
+ for (var i = 0; i < fileInputs.length; i++) {
+ var fileInput = fileInputs[i];
+ var file = fileInput.files[0];
+ if (file) {
+ // Check file size
+ var maxSizeMB = fileInput.getAttribute('data-max-size');
+ if (maxSizeMB) {
+ var maxSizeBytes = parseInt(maxSizeMB) * 1024 * 1024;
+ if (file.size > maxSizeBytes) {
+ msgDiv.style.display = 'block';
+ msgDiv.style.backgroundColor = '#fef2f2';
+ msgDiv.style.color = '#991b1b';
+ msgDiv.innerText = 'Error: File "' + file.name + '" exceeds the maximum size of ' + maxSizeMB + 'MB.';
+ return;
+ }
+ }
+ // Check file type
+ var allowedTypes = fileInput.getAttribute('data-file-types');
+ if (allowedTypes) {
+ var typesArray = allowedTypes.split(',');
+ var fileExt = file.name.split('.').pop().toLowerCase();
+ var fileType = file.type.split('/')[0];
+ var isAllowed = false;
+
+ for (var j = 0; j < typesArray.length; j++) {
+ var type = typesArray[j].trim();
+ if (type === 'Images' && (['jpg','jpeg','png','gif','webp'].includes(fileExt) || fileType === 'image')) { isAllowed = true; break; }
+ if (type === 'Documents' && (['doc','docx','txt','rtf'].includes(fileExt) || fileType === 'application')) { isAllowed = true; break; }
+ if (type === 'PDF' && (fileExt === 'pdf' || file.type === 'application/pdf')) { isAllowed = true; break; }
+ if (type === 'Spreadsheets' && (['xls','xlsx','csv'].includes(fileExt) || file.type.includes('spreadsheet'))) { isAllowed = true; break; }
+ }
+
+ if (!isAllowed) {
+ msgDiv.style.display = 'block';
+ msgDiv.style.backgroundColor = '#fef2f2';
+ msgDiv.style.color = '#991b1b';
+ msgDiv.innerText = 'Error: File type "' + fileExt + '" is not allowed for "' + fileInput.name + '". Allowed types: ' + allowedTypes + '.';
+ return;
+ }
+ }
+ }
+ }
+
+ var formData = new FormData(form);
+ var data = {};
+ formData.forEach((value, key) => { if(key !== 'webformId' && key !== 'module') { data[key] = value; } });
+ btn.disabled = true;
+ btn.innerText = 'Submitting...';
+ fetch('/cm/api/webform-submissions', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({webformId: 'cmob43b6q0000lr1c8mg7olcg', fields: data})
+ }).then(response => response.json()).then(result => {
+ if(result.success || result.message === "Form submitted successfully") { form.style.display = 'none'; msgDiv.style.display = 'block'; msgDiv.innerText = 'Thank you! Your submission has been received.'; } else { throw new Error(result.message || 'Submission failed'); }
+ }).catch(error => {
+ msgDiv.style.display = 'block'; msgDiv.style.backgroundColor = '#fef2f2'; msgDiv.style.color = '#991b1b'; msgDiv.innerText = 'Error: ' + error.message;
+ btn.disabled = false; btn.innerText = 'Submit';
+ });
 });
 </script>
   `;
