@@ -5,7 +5,6 @@ import React, { useEffect, useRef } from 'react';
 const WebformEmbed = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-
   const formSnippet = `
 <style>
     .crm-webform-wrapper { all: initial; font-family: Arial, sans-serif; }
@@ -53,13 +52,11 @@ document.getElementById('crm-webform-cmpgvculi0006wgowsyxs8pb7').addEventListene
     var form = e.target;
     var btn = form.querySelector('button[type="submit"]');
     var msgDiv = document.getElementById('crm-form-message-cmpgvculi0006wgowsyxs8pb7');
-    // File upload validation
     var fileInputs = form.querySelectorAll('input[type="file"]');
     for (var i = 0; i < fileInputs.length; i++) {
         var fileInput = fileInputs[i];
         var file = fileInput.files[0];
         if (file) {
-            // Check file size
             var maxSizeMB = fileInput.getAttribute('data-max-size');
             if (maxSizeMB) {
                 var maxSizeBytes = parseInt(maxSizeMB) * 1024 * 1024;
@@ -71,7 +68,6 @@ document.getElementById('crm-webform-cmpgvculi0006wgowsyxs8pb7').addEventListene
                     return;
                 }
             }
-            // Check file type
             var allowedTypes = fileInput.getAttribute('data-file-types');
             if (allowedTypes) {
                 var typesArray = allowedTypes.split(',');
@@ -117,14 +113,11 @@ document.getElementById('crm-webform-cmpgvculi0006wgowsyxs8pb7').addEventListene
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // 1. Clear previous content
     containerRef.current.innerHTML = '';
 
-    // 2. Parse the snippet
     const parser = new DOMParser();
     const doc = parser.parseFromString(formSnippet, 'text/html');
 
-    // 3. Inject Styles into head
     const styleBlock = doc.querySelector('style');
     if (styleBlock) {
       const newStyle = document.createElement('style');
@@ -133,25 +126,28 @@ document.getElementById('crm-webform-cmpgvculi0006wgowsyxs8pb7').addEventListene
       document.head.appendChild(newStyle);
     }
 
-    // 4. Render HTML into container
     const formHtml = doc.querySelector('.crm-webform-wrapper');
     if (formHtml) {
       containerRef.current.innerHTML = formHtml.outerHTML;
     }
 
-    // 5. Re-attach Scripts with URL replacement
     const scriptBlock = doc.querySelector('script');
     if (scriptBlock) {
       const newScript = document.createElement('script');
       let scriptContent = scriptBlock.textContent || '';
 
-      // Replace relative URL with full CRM base URL
-      // Replace relative URL with full CRM base URL (ensuring no double slashes)
       let crmBaseUrl = process.env.NEXT_PUBLIC_CRM_BASE_URL || 'https://your-crm-domain.com';
       if (crmBaseUrl.endsWith('/')) crmBaseUrl = crmBaseUrl.slice(0, -1);
 
+      // Replace any URL (localhost or otherwise) before /cm/api/webform-submissions
       scriptContent = scriptContent.replace(
-        "'/cm/api/webform-submissions'",
+        /['"]https?:\/\/[^'"]*\/cm\/api\/webform-submissions['"]/g,
+        `'${crmBaseUrl}/cm/api/webform-submissions'`
+      );
+
+      // Also handle relative URL case as fallback
+      scriptContent = scriptContent.replace(
+        /['"]\/cm\/api\/webform-submissions['"]/g,
         `'${crmBaseUrl}/cm/api/webform-submissions'`
       );
 
@@ -160,7 +156,6 @@ document.getElementById('crm-webform-cmpgvculi0006wgowsyxs8pb7').addEventListene
     }
 
     return () => {
-      // Cleanup style block on unmount
       const existingStyle = document.head.querySelector('[data-gems-crm-style]');
       if (existingStyle) existingStyle.remove();
     };
@@ -168,14 +163,11 @@ document.getElementById('crm-webform-cmpgvculi0006wgowsyxs8pb7').addEventListene
 
   return (
     <div className="w-full max-w-lg mx-auto relative group">
-      {/* Decorative background elements */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal/20 blur-3xl rounded-full animate-pulse" />
       <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-gold/10 blur-3xl rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
 
-      {/* The Glassmorphism Card */}
       <div className="p-4 sm:p-8 rounded-[20px] z-10">
         <div ref={containerRef} className="min-h-[300px]">
-          {/* Loading state or placeholder */}
           <div className="animate-pulse flex flex-col gap-4 w-full">
             <div className="h-8 bg-white/5 rounded w-3/4" />
             <div className="h-4 bg-white/5 rounded w-1/2" />
