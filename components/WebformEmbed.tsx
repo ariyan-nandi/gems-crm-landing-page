@@ -26,44 +26,40 @@ const WebformEmbed = () => {
 </style>
  
 <div class="crm-webform-wrapper">
-<div class="crm-webform-container" id="crm-container-NEW_FORM_ID">
-<div class="crm-form-header">SIT</div>
-<form id="crm-webform-NEW_FORM_ID" enctype="multipart/form-data">
-<input type="hidden" name="webformId" value="NEW_FORM_ID" />
+<div class="crm-webform-container" id="crm-container-cmq6i16tw0000o31d7z67vhrj">
+<div class="crm-form-header">SIT2</div>
+<form id="crm-webform-cmq6i16tw0000o31d7z67vhrj" enctype="multipart/form-data">
+<input type="hidden" name="webformId" value="cmq6i16tw0000o31d7z67vhrj" />
 <input type="hidden" name="module" value="Leads" />
 <div class="crm-form-row">
 <div class="crm-form-group" style="flex: 1 1 calc(48% - 15px); max-width: calc(48% - 15px); min-width: 0;">
-<label for="crm_firstName_NEW_FORM_ID" class="crm-form-label">First Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
-<input id="crm_firstName_NEW_FORM_ID" type="text" name="firstName" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+<label for="crm_firstName_cmq6i16tw0000o31d7z67vhrj" class="crm-form-label">First Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_firstName_cmq6i16tw0000o31d7z67vhrj" type="text" name="firstName" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
 </div>
 <div class="crm-form-group" style="flex: 1 1 calc(48% - 15px); max-width: calc(48% - 15px); min-width: 0;">
-<label for="crm_lastName_NEW_FORM_ID" class="crm-form-label">Last Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
-<input id="crm_lastName_NEW_FORM_ID" type="text" name="lastName" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+<label for="crm_lastName_cmq6i16tw0000o31d7z67vhrj" class="crm-form-label">Last Name <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_lastName_cmq6i16tw0000o31d7z67vhrj" type="text" name="lastName" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
 </div>
 <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 0;">
-<label for="crm_email_NEW_FORM_ID" class="crm-form-label">Email ID <span style="color:#dc3545; margin-left:3px;">*</span></label>
-<input id="crm_email_NEW_FORM_ID" type="email" name="email" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+<label for="crm_email_cmq6i16tw0000o31d7z67vhrj" class="crm-form-label">Email ID <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_email_cmq6i16tw0000o31d7z67vhrj" type="email" name="email" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
 </div>
 <div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 0;">
-<label for="crm_company_NEW_FORM_ID" class="crm-form-label">Company <span style="color:#dc3545; margin-left:3px;">*</span></label>
-<input id="crm_company_NEW_FORM_ID" type="text" name="company" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
-</div>
-<div class="crm-form-group" style="flex: 1 1 100%; max-width: 100%; min-width: 0;">
-<label for="crm_industry_NEW_FORM_ID" class="crm-form-label">Industry </label>
-<input id="crm_industry_NEW_FORM_ID" type="text" name="industry"   class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
+<label for="crm_company_cmq6i16tw0000o31d7z67vhrj" class="crm-form-label">Company <span style="color:#dc3545; margin-left:3px;">*</span></label>
+<input id="crm_company_cmq6i16tw0000o31d7z67vhrj" type="text" name="company" required  class="crm-form-input" placeholder="" style="width: 100%; height: auto; " />
 </div></div>
 <div class="crm-form-footer"><button type="submit" class="crm-form-submit">Submit</button></div>
 </form>
-<div id="crm-form-message-NEW_FORM_ID" class="crm-message-box"></div>
+<div id="crm-form-message-cmq6i16tw0000o31d7z67vhrj" class="crm-message-box"></div>
 </div>
 </div>
  
 <script>
-document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', function(e) {
+document.getElementById('crm-webform-cmq6i16tw0000o31d7z67vhrj').addEventListener('submit', function(e) {
     e.preventDefault();
     var form = e.target;
     var btn = form.querySelector('button[type="submit"]');
-    var msgDiv = document.getElementById('crm-form-message-NEW_FORM_ID');
+    var msgDiv = document.getElementById('crm-form-message-cmq6i16tw0000o31d7z67vhrj');
     // File upload validation
     var fileInputs = form.querySelectorAll('input[type="file"]');
     for (var i = 0; i < fileInputs.length; i++) {
@@ -114,7 +110,7 @@ document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', fu
     fetch('/cm/api/webform-submissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({webformId: 'NEW_FORM_ID', fields: data})
+        body: JSON.stringify({webformId: 'cmq6i16tw0000o31d7z67vhrj', fields: data})
     }).then(response => response.json()).then(result => {
         if(result.success || result.message === "Form submitted successfully") { form.style.display = 'none'; msgDiv.style.display = 'block'; msgDiv.innerText = 'Thank you! Your submission has been received.'; } else { throw new Error(result.message || 'Submission failed'); }
     }).catch(error => {
@@ -122,7 +118,7 @@ document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', fu
         btn.disabled = false; btn.innerText = 'Submit';
     });
 });
-</script> 
+</script>
   `;
 
   useEffect(() => {
