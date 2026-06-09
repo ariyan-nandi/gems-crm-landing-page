@@ -6,9 +6,6 @@ const WebformEmbed = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const formSnippet = `
-
-
-
 <style>
     .crm-webform-wrapper { all: initial; font-family: Arial, sans-serif; }
     .crm-webform-container { max-width: 650px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid #eef0f2; }
@@ -125,8 +122,7 @@ document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', fu
         btn.disabled = false; btn.innerText = 'Submit';
     });
 });
-</script>
- 
+</script> 
   `;
 
   useEffect(() => {
@@ -135,7 +131,6 @@ document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', fu
     // 1. Clear previous content
     containerRef.current.innerHTML = "";
 
-    // 2. Parse the snippet
     const parser = new DOMParser();
     const doc = parser.parseFromString(formSnippet, "text/html");
 
@@ -166,6 +161,13 @@ document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', fu
         process.env.NEXT_PUBLIC_CRM_BASE_URL || "https://your-crm-domain.com";
       if (crmBaseUrl.endsWith("/")) crmBaseUrl = crmBaseUrl.slice(0, -1);
 
+      // Replace any URL (localhost or otherwise) before /cm/api/webform-submissions
+      scriptContent = scriptContent.replace(
+        /['"]https?:\/\/[^'"]*\/cm\/api\/webform-submissions['"]/g,
+        `'${crmBaseUrl}/cm/api/webform-submissions'`,
+      );
+
+      // Also handle relative URL case as fallback
       scriptContent = scriptContent.replace(
         "'/cm/api/webform-submissions'",
         `'${crmBaseUrl}/cm/api/webform-submissions'`,
@@ -186,17 +188,14 @@ document.getElementById('crm-webform-NEW_FORM_ID').addEventListener('submit', fu
 
   return (
     <div className="w-full max-w-lg mx-auto relative group">
-      {/* Decorative background elements */}
       <div className="absolute -top-10 -right-10 w-32 h-32 bg-teal/20 blur-3xl rounded-full animate-pulse" />
       <div
         className="absolute -bottom-10 -left-10 w-32 h-32 bg-gold/10 blur-3xl rounded-full animate-pulse"
         style={{ animationDelay: "1s" }}
       />
 
-      {/* The Glassmorphism Card */}
       <div className="p-4 sm:p-8 rounded-[20px] z-10">
         <div ref={containerRef} className="min-h-[300px]">
-          {/* Loading state or placeholder */}
           <div className="animate-pulse flex flex-col gap-4 w-full">
             <div className="h-8 bg-white/5 rounded w-3/4" />
             <div className="h-4 bg-white/5 rounded w-1/2" />
